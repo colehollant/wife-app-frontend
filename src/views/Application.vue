@@ -103,6 +103,8 @@
     <div v-if="responseState.error" class="text-secondary-20 font-medium">
       <p>{{responseState.result.message}}</p>
     </div>
+
+    <pre><code>{{stringify(responseState)}}</code></pre>
   </div>
 </template>
 
