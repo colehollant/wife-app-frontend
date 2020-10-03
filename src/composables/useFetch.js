@@ -70,7 +70,7 @@ export function useEndpoint() {
         return
       }
       responseState.error = false
-      responseState.result = response.data
+      responseState.result = response
       responseState.loading = false
     }) 
   }
