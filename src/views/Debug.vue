@@ -2,7 +2,7 @@
   <div class="min-h-screen pt-8 pb-16 sm:pt-12 sm:pb-20 space-y-12">
     <Container class="space-y-6 sm:space-y-8">
       <h1 class="text-secondary-20 text-2xl font-medium text-left sm:text-center">
-        nicole's wife application
+        nicole's wife application - debugging
       </h1>
       
       <form class="text-left space-y-12 max-w-lg mx-auto" @submit.prevent>
@@ -103,6 +103,8 @@
     <div v-if="responseState.error" class="text-secondary-20 font-medium">
       <p>{{responseState.result.message}}</p>
     </div>
+
+    <pre><code>{{stringify(responseState)}}</code></pre>
   </div>
 </template>
 
@@ -110,7 +112,7 @@
 import { useEndpoint } from '@/composables'
 import { reactive, onMounted } from '@vue/composition-api'
 export default {
-  name: 'Application',
+  name: 'Debug',
   setup(_, { root }) {
     const state = reactive({
       hasCrush: '',
@@ -142,7 +144,7 @@ export default {
     }
 
     onMounted(() => {
-      document.title = 'application 📝'
+      document.title = 'debug 🐛'
     })
 
     return {
