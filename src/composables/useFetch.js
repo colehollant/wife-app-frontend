@@ -27,7 +27,7 @@ export function useEndpoint() {
   function post(endpoint, body, queryparam=null) {
     responseState.loading = true
     let prod = true
-    if(process.env.NODE_ENV == "dev") prod = false
+    // if(process.env.NODE_ENV == "dev") prod = false
     let url = `http://localhost:4000/${[endpoint, queryparam].join('/')}`
     if(prod) url = `https://wife.api.colehollant.com/${[endpoint, queryparam].join('/')}`
     let code = -1
@@ -53,7 +53,7 @@ export function useEndpoint() {
   function get(endpoint, queryparam=null) {
     responseState.loading = true
     let prod = true
-    if(process.env.NODE_ENV == "dev") prod = false
+    // if(process.env.NODE_ENV == "dev") prod = false
     let url = `http://localhost:4000/${[endpoint, queryparam].join('/')}`
     if(prod) url = `https://wife.api.colehollant.com/${[endpoint, queryparam].join('/')}`
     let code = -1

@@ -8,13 +8,13 @@
         <div v-for="response of responseState.result" :key="response._id" class="bg-neutral-80 rounded-lg p-3 sm:p-4">
           <div class="flex space-x-4">
             <img class="w-12 h-12 sm:w-24 sm:h-24 rounded-full" :src="`https://unavatar.now.sh/twitter/${convertHandle(response.twitterHandle)}`" />
-            <div class="space-y-4 divide-y divide-neutral-70 w-full">
+            <div class="space-y-4 divide-y divide-neutral-70 w-0 flex-1">
               <div class="space-y-px">
                 <p class="text-xs text-secondary-20 font-medium leading-tight">{{convertDate(response.timestamp)}}</p>
                 <div class="flex space-x-2 items-baseline" v-if="typeof response.twitterHandle !== undefined  && response.twitterHandle !== ''">
-                  <p class="text-lg text-secondary-20 font-medium">{{convertHandle(response.twitterHandle)}}</p>
+                  <p class="text-lg text-secondary-20 font-medium truncate">{{convertHandle(response.twitterHandle)}}</p>
                   <p class="text-sm text-neutral-70">&bull;</p>
-                  <p class="text-lg text-secondary-20 font-semibold">{{response.age}}</p>
+                  <p class="text-lg text-secondary-20 font-semibold truncate">{{response.age}}</p>
                 </div>
                 <p class="text-secondary-30 text-sm font-medium">{{response.signs}}</p>
               </div>
